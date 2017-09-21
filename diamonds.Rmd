@@ -1,0 +1,65 @@
+---
+title: "Diamonds"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(readxl)
+diamond=read_excel("diamonds.xlsx") 
+```
+
+
+```{r}
+dim(iris)
+```
+```{r}
+diamond[50000,3]
+```
+
+
+now im going to see the first 6 rows using the head command
+
+```{r}
+head(diamond)
+```
+
+```{r}
+head(diamond)
+tail(diamond) # last 6 rows
+```
+
+summarize my data
+
+```{r}
+summary(diamond)
+```
+
+## Making the cut variable a fartor variable 
+
+```{r}
+diamond$cut=as.factor(diamond$cut)
+summary(diamond)
+```
+
+```{r}
+diamond$color=as.factor(diamond$color)
+summary(diamond)
+```
+```{r}
+table(diamond$cut,diamond$color)
+```
+
+
+
+
+
+
+
